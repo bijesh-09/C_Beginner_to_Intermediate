@@ -17,13 +17,13 @@ This repo showcases my journey mastering C fundamentals, data structures, pointe
 
 ## 📂 Folder Structure
 
-/Basics — Variables, loops, conditionals, input/output
-/Functions — User-defined functions and modular programming
-/Arrays_Strings — Array manipulation, string functions, multidimensional arrays
-/Pointers — Pointer concepts, pointer arithmetic, dynamic memory
-/Structures — Structs, unions, and complex data types
-/File_Handling — Reading/writing files, binary and text operations
-/Projects — Mini projects and combined concept implementations
+- /Basics — Variables, loops, conditionals, input/output
+- /Functions — User-defined functions and modular programming
+- /Arrays_Strings — Array manipulation, string functions, multidimensional arrays
+- /Pointers — Pointer concepts, pointer arithmetic, dynamic memory
+- /Structures — Structs, unions, and complex data types
+- /File_Handling — Reading/writing files, binary and text operations
+- /Projects — Mini projects and combined concept implementations
 
 ---
 
