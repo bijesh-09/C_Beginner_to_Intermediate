@@ -1,0 +1,252 @@
+//1. wap in c to take the array as input and check whether it is balanced or not
+
+#include<stdio.h>
+int main()
+{
+    int i,n, a[100], neven = 0, nodd = 0;
+    printf("Enter n: ");
+    scanf("%d",&n);
+
+    printf("Enter the numbers: ");
+    for ( i = 0; i < n; i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    
+    for ( i = 0; i < n; i++)
+    {
+        if (a[i]%2 == 0)
+        {
+            neven++;
+        }
+        else{
+            nodd++;
+        }
+        
+    }
+    if (neven = 2*nodd)
+    {
+        printf("Balanced Array");
+    }
+    else{
+        printf("Not Balanced Array");
+
+    }
+    return 0;
+    
+}
+
+/*
+Output:
+Enter n: 6
+Enter the numbers: 1 2 3 4 6 8
+Balanced Array
+*/
+
+
+
+
+//3. find sum of 1st five prime numbers. the loop will continue to take input from the user until the user has given five prime numbers
+
+
+#include<stdio.h>
+
+
+int main()
+{
+    int i, n, count =0, sum=0;
+    while (count<=5)
+    {
+        printf("Enter a number: ");
+        scanf("%d",&n);
+
+        for ( i = 2; i < n; i++)
+        {
+            if (n%i == 0)
+            {
+                break;
+            }
+            
+        }
+        if (n == i)
+        {
+            sum += n;
+            count++;
+        }
+        
+        
+    }
+    printf("sum = %d",sum);
+    
+    return 0;
+}
+/*
+Output:
+Enter a number: 1
+Enter a number: 2
+Enter a number: 3
+Enter a number: 4
+Enter a number: 5
+Enter a number: 7
+Enter a number: 11
+Enter a number: 13
+sum = 41
+*/
+
+
+
+
+/*
+5. wap to create a function that will generate 5 random integers , which are stored in static array and return their pointer to main() 
+function such that the elements of array will be printed in main() function
+*/
+
+#include<stdio.h>
+
+int * fn()
+{
+    static int a[5] = {5,13,14,54,32};
+    return a;
+}
+
+int main()
+{
+    int *ptr;
+    int i;
+    ptr = fn();
+    for ( i = 0; i < 5; i++)
+    {
+        printf("%d ", *(ptr + i) );
+    }
+    
+    return 0;
+}
+/*
+Output:
+5 13 14 54 32
+*/
+
+
+
+
+//7. A file named num.dat contains the integers and real numbers. Wap in c to copy the integers only from num.dat to int.dat
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int r,x;
+    float num;
+    FILE *ifp, *nfp;
+    ifp = fopen("int.dat","w");
+    nfp = fopen("num.dat","r");
+    if (nfp == NULL)
+    {
+        printf("File not found!");
+        exit(1);
+    }
+    while ( fscanf(nfp , "%f", &num) != EOF )
+    {
+        x = num * 10;
+        r = x % 10;
+        if (r == 0)
+        {
+            fprintf( ifp , "%.0f ", num);
+        }
+        
+    }
+    printf("File written!");
+    
+    
+
+    return 0;
+}
+/*
+Output:
+File written!
+
+In num.dat: 1 2 3.5 4 6.3
+In int.dat: 1 2 4 (only integers are copied from num.dat to int.dat)
+*/
+
+
+
+
+//9.  wap in c to take a string in main() function and pass it to an user defined function that will return the length of that string
+
+#include<stdio.h>
+
+int fn(char *);
+
+int main()
+{
+    int value;
+    char str[30];
+    printf("Enter a string: ");
+    scanf("%s",str);
+    value = fn(str);
+    printf("Length = %d", value);
+    return 0;
+}
+
+int fn(char *ptr)
+{
+    int n;
+    int i = 0;
+    while ( *(ptr + i) != '\0' )
+    {
+        i++;
+    }
+    n = i;
+    return n;
+    
+}
+/*
+Output:
+Enter a string: ram
+Length = 3
+*/
+
+
+
+
+/*
+10. create a structure called "Student" with members name, age, and total marks. wap in c to input data for two students, display the name 
+of the student having higher total marks
+*/
+
+#include<stdio.h>
+
+struct Student
+{
+    char name[30];
+    int age;
+    float total_marks;
+};
+
+int main()
+{
+    int i;
+    struct Student s[2], temp;
+    for ( i = 0; i < 2; i++)
+    {
+        printf("Enter name , age and total marks of the student_%d: ",i+1);
+        scanf("%s%d%f", s[i].name, &s[i].age, &s[i].total_marks);
+    }
+
+    if ( s[0].total_marks < s[1].total_marks )
+    {
+        temp = s[0];
+        s[0] = s[1];
+        s[1] = temp;
+    }
+    
+    printf("Name od student having higher marks: %s", s[0].name);
+
+    return 0;
+}
+/*
+Output:
+Enter name , age and total marks of the student_1: ram 18 90
+Enter name , age and total marks of the student_2: sam 18 100
+Name od student having higher marks: sam
+*/
