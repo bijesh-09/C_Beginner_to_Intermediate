@@ -1,0 +1,3 @@
+Name = Ram	 Roll Number = 1	 Marks = 100.00	 Address = ktm
+Name = Sam	 Roll Number = 2	 Marks = 99.00	 Address = bkt
+Name = Hari	 Roll Number = 2	 Marks = 98.00	 Address = lal

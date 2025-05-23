@@ -1,0 +1,3 @@
+Ram 1 100.00 ktm
+Sam 2 99.00 bkt
+Hari 3 98.00 lal
